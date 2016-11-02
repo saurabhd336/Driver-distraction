@@ -5,4 +5,5 @@ dlib_build
 CMakeFiles
 dlib
 shape_predictor_68_face_landmarks.dat
+driver_dist
 
