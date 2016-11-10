@@ -13,6 +13,7 @@ A modified implementation of http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber
 #Results
 The application could correctly detect and classify head poses using a webcam video feed at about 11 fps.
 Images attached.
+![Alt text](/Result/image_Centre_Stack.jpg?raw=true "Centre Stack")
 [[https://github.com/saurabhd336/Driver-distraction/blob/master/Result/image_Centre_Stack.jpg|alt=octocat]]
 [[https://github.com/saurabhd336/Driver-distraction/blob/master/Result/image_Down.jpg|alt=octocat]]
 [[https://github.com/saurabhd336/Driver-distraction/blob/master/Result/image_Instrument_stack.jpg|alt=octocat]]
