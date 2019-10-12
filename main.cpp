@@ -10,10 +10,8 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/core/core.hpp>
-#include <opencv/cv.hpp>
 #include <dlib/opencv.h>
 #include "svm.h"
-#include <bits/stdc++.h>
 
 #define PI 3.14159265;
 
@@ -108,129 +106,129 @@ int triangulation(Mat img, full_object_detection shape, int arr[20])
 		}
 	std::vector<double> angles;
 	//1	
-	line(img, vec[9],vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[9], vec[10], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[10], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[9],vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[9], vec[10], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[10], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[9].x, vec[9].y, vec[10].x, vec[10].y, vec[11].x, vec[11].y);
 	//2
-	line(img, vec[13], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[9], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[9], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[13], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[9], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[9], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[9].x, vec[9].y, vec[13].x, vec[13].y, vec[11].x, vec[11].y);
 	//3
-	line(img, vec[10], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[10], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[10], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[10], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[10].x, vec[10].y, vec[15].x, vec[15].y, vec[11].x, vec[11].y);
 	//4
-	line(img, vec[12], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[13], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[12], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[12], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[13], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[12], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[12].x, vec[12].y, vec[13].x, vec[13].y, vec[11].x, vec[11].y);
 	//5
-	line(img, vec[12], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[11], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[12], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[12], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[11], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[12], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[15].x, vec[15].y, vec[12].x, vec[12].y, vec[11].x, vec[11].y);
 	//6
-	line(img, vec[12], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[13], vec[14], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[12], vec[14], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[12], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[13], vec[14], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[12], vec[14], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[13].x, vec[13].y, vec[12].x, vec[12].y, vec[14].x, vec[14].y);
 	//7
-	line(img, vec[12], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[12], vec[14], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[14], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[12], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[12], vec[14], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[14], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[13].x, vec[13].y, vec[12].x, vec[12].y, vec[14].x, vec[14].y);
 	//8
-	line(img, vec[10], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[10], vec[8], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[8], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[10], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[10], vec[8], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[8], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[10].x, vec[10].y, vec[15].x, vec[15].y, vec[8].x, vec[8].y);
 	//9
-	line(img, vec[7], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[7], vec[8], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[8], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[7], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[7], vec[8], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[8], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[7].x, vec[7].y, vec[15].x, vec[15].y, vec[8].x, vec[8].y);
 	//10
-	line(img, vec[7], vec[6], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[7], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[6], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[7], vec[6], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[7], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[6], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[7].x, vec[7].y, vec[6].x, vec[6].y, vec[18].x, vec[18].y);
 	//11
-	line(img, vec[7], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[7], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[7], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[7], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[7].x, vec[7].y, vec[15].x, vec[15].y, vec[18].x, vec[18].y);
 	//12
-	line(img, vec[7], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[7], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[7], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[7], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[7].x, vec[7].y, vec[15].x, vec[15].y, vec[18].x, vec[18].y);
 	//13
-	line(img, vec[14], vec[15], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[14], vec[17], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[15], vec[17], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[14], vec[15], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[14], vec[17], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[15], vec[17], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[17].x, vec[17].y, vec[14].x, vec[14].y, vec[15].x, vec[15].y);
 	//14
-	line(img, vec[14], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[14], vec[17], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[13], vec[17], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[14], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[14], vec[17], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[13], vec[17], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[17].x, vec[17].y, vec[14].x, vec[14].y, vec[13].x, vec[13].y);
 	//15
-	line(img, vec[5], vec[6], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[6], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[18], vec[5], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[5], vec[6], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[6], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[18], vec[5], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[6].x, vec[6].y, vec[5].x, vec[5].y, vec[18].x, vec[18].y);
 	//16
-	line(img, vec[5], vec[4], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[4], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[18], vec[5], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[5], vec[4], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[4], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[18], vec[5], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[4].x, vec[4].y, vec[5].x, vec[5].y, vec[18].x, vec[18].y);
 	//17
-	line(img, vec[18], vec[4], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[4], vec[17], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[17], vec[18], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[18], vec[4], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[4], vec[17], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[17], vec[18], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[4].x, vec[4].y, vec[18].x, vec[18].y, vec[17].x, vec[17].y);
 	//18
-	line(img, vec[16], vec[4], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[4], vec[17], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[17], vec[16], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[16], vec[4], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[4], vec[17], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[17], vec[16], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[4].x, vec[4].y, vec[16].x, vec[16].y, vec[17].x, vec[17].y);
 	//19
-	line(img, vec[16], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[13], vec[17], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[17], vec[16], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[16], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[13], vec[17], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[17], vec[16], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[13].x, vec[13].y, vec[16].x, vec[6].y, vec[17].x, vec[17].y);
 	//20
-	line(img, vec[16], vec[4], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[4], vec[3], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[3], vec[16], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[16], vec[4], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[4], vec[3], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[3], vec[16], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[4].x, vec[4].y, vec[16].x, vec[16].y, vec[3].x, vec[3].y);
 	//21
-	line(img, vec[16], vec[2], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[2], vec[3], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[3], vec[16], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[16], vec[2], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[2], vec[3], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[3], vec[16], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[2].x, vec[2].y, vec[16].x, vec[16].y, vec[3].x, vec[3].y);
 	//22
-	line(img, vec[16], vec[2], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[2], vec[1], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[1], vec[16], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[16], vec[2], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[2], vec[1], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[1], vec[16], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[2].x, vec[2].y, vec[16].x, vec[16].y, vec[1].x, vec[1].y);
 	//23
-	line(img, vec[16], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[13], vec[1], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[1], vec[16], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[16], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[13], vec[1], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[1], vec[16], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[13].x, vec[13].y, vec[16].x, vec[16].y, vec[1].x, vec[1].y);
 	//24
-	line(img, vec[0], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[13], vec[1], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[1], vec[0], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[0], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[13], vec[1], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[1], vec[0], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[13].x, vec[13].y, vec[0].x, vec[0].y, vec[1].x, vec[1].y);
 	//25
-	line(img, vec[0], vec[13], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[13], vec[9], CV_RGB(0, 0, 255), 1, CV_AA, 0);
-	line(img, vec[9], vec[0], CV_RGB(0, 0, 255), 1, CV_AA, 0);
+	cv::line(img, vec[0], vec[13], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[13], vec[9], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
+	cv::line(img, vec[9], vec[0], CV_RGB(0, 0, 255), 1, LINE_AA, 0);
 	TriangleAngleCalculation(angles, vec[13].x, vec[13].y, vec[0].x, vec[0].y, vec[9].x, vec[9].y);
 	
 	string result = svm_predict(angles);
